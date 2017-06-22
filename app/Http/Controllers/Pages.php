@@ -11,13 +11,24 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use App\Post;
 use Session;
+use Auth;
 
 class Pages extends Controller{
 
       public function getHome() {
+        
+       $user_id =0;
+
+        // $user_id = Auth::user()->id;
+
+         // dd($user_id);
+
+
 
         $posts = Post::paginate(5);
-        return view('pages.home')->withPosts($posts);
+
+        return view('pages.home', compact('posts', 'user_id'));
+        
 
       }
       public function getAbout() {

@@ -16,7 +16,13 @@
             <li><a href="{{ url('/') }}">HOME</a></li>
             <li><a href="{{ url('about') }}">ABOUT</a></li>
             <li><a href="{{ url('contact') }}">CONTACT</a></li>
+
+            @if (Auth::user())
+
             <li><a href="{{ url('posts') }}">BLOG</a></li>
+
+            @endif
+
           </ul>
         </li>
       </ul>

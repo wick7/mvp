@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use Session;
+use DateTime;
+use Auth;
 
 class PostController extends Controller
 {
@@ -47,7 +49,11 @@ class PostController extends Controller
         $post = new Post;
 
         $post->title = $request->title;
-        $post->body = $request->body;
+        $post->description = $request->body;
+        $post->start = new DateTime();
+        $post->end = new DateTime();
+        $post->user_id = Auth::user()->id;
+         
 
         $post->save();
 

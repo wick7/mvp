@@ -15,3 +15,7 @@ Route::get('/', 'Pages@getHome');
 Route::get('about', 'Pages@getAbout');
 Route::get('contact', 'Pages@getContact');
 Route::resource('posts', 'PostController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
