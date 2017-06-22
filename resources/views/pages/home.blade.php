@@ -5,6 +5,23 @@
 @section('title')
 @extends('main')
 @section('content')
+
+<div class="container-fluid sec_one">
+  <div class="row" style="padding: 3em;"></div>
+  <div class="row">
+    <div class="col-xs-2 col-md-2 col-sm-2"></div>
+    <div class="col-xs-8 col-md-8 col-sm-8 page-header text-center" style="background-color: rgba(255, 255, 255, 0.6); border-radius: 25px;" >
+      <h1 class="title m-b-md">CARROT PATH</h1>
+      <small style="font-size: 2rem;">Lorem ipsum dolor sit amet</small>
+    </div>
+    <div class="col-xs-2 col-md-2 col-sm-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 text-center">
+      <a href="{{ url('posts') }}"><button class="btn btn-default text-center" style="padding: 1.4rem;border: 1px solid #31034A;">New Events</button></a>
+    </div>
+  </div>
+</div>
       <div class="container-fluid">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
@@ -47,10 +64,36 @@
         </div>
       </div>
 
-        <div class="container">
+
+
+  <div class="container-fluid sec4">
+    <div class="container sec4_wrap">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6 sec4_style" style="border-top:hidden; border-left:hidden;">
+          <h1>Utim</h1>
+          <img src="https://image.flaticon.com/icons/svg/287/287681.svg">
+          <p>Sed ut perspiciatis unde</p><button type="button" class="btn btn-primary">Learn More</button>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 sec4_style" style="border-top:hidden; border-right:hidden;">
+          <h1>Unher</h1><img src="https://image.flaticon.com/icons/svg/61/61092.svg">
+          <p>Sed ut perspiciatis unde</p><button type="button" class="btn btn-primary">Learn More</button></div>
+      </div>
+      <!--        <hr class="sec4_hr"> -->
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6 sec4_style" style="border-bottom:hidden; border-left:hidden;">
+          <h1>Ipsum</h1><img src="https://image.flaticon.com/icons/svg/149/149125.svg">
+          <p>Sed ut perspiciatis unde</p><button type="button" class="btn btn-primary">Learn More</button></div>
+
+        <div class="col-md-6 col-sm-6 col-xs-6 sec4_style" style="border-bottom:hidden; border-right:hidden;">
+          <h1>Lorum</h1><img src="https://image.flaticon.com/icons/svg/182/182482.svg">
+          <p>Sed ut perspiciatis unde</p><button type="button" class="btn btn-primary">Learn More</button></div>
+      </div>
+    </div>
+  </div>
+        <div class="container-fluid">
           <div class="row">
-            <div class="col-md-12 col-xs-12 col-lg-12 text-center jumbotron" style="margin-top: 1em;">
-              <h1>EVENTS</h1>
+            <div class="col-md-12 col-xs-12 col-lg-12 text-center" style="font-size: 5em;">
+                UPCOMING EVENTS
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-@section('title', '| View Post')
+@section('title', '| Event')
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/parsely.css')}}">
 

@@ -9,6 +9,22 @@ html, body {
     margin: 0;
 }
 
+.title {
+    font-size: 10rem;
+    font-family: 'Satisfy', cursive;
+    color: #31034A;
+}
+
+.sec_one {
+  margin-top: -1.4em;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://blogs-images.forbes.com/sap/files/2016/12/All-In-Workers-1200x800.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .card-img-top {
   width: 100%;
   height: 50%;
@@ -31,4 +47,46 @@ html, body {
   z-index: 28;
   color: white;
   text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+
+.sec4 {
+  height: 50em;
+  background-image: url("https://images.pexels.com/photos/20974/pexels-photo.jpg?w=940&h=650&auto=compress&cs=tinysrgb");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 0;
+}
+
+.sec4_wrap {
+  background-color: rgba(255, 255, 255, 0.6);
+  height: 40em;
+  margin-top: 5em;
+/*   display: flex;
+  flex-direction: column; */
+}
+.sec4_content {
+  border: 1px solid black;
+}
+
+.sec4_style {
+  text-align: center;
+  height: 20em;
+  width: 100%;
+  background-color: ;
+  border: 1px solid black;
+}
+
+.sec4_style h1,p,button {
+  margin: 1.5em;
+}
+
+.sec4_style img {
+  height: 5rem;
+  width: 5rem;
+  margin-top: -3em;
+}
+
+.sec4_style h1 {
+  font-family: 'Raleway', sans-serif;
 }
