@@ -1,4 +1,4 @@
-@section('title', '| All Posts')
+@section('title', '| Volunteering Events')
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/home.css')}}">
 
@@ -7,7 +7,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10">
-      <h1>ALL POSTS</h1>
+      <h1>Volunteering Events</h1>
     </div>
     <div class="col-md-2">
       <a href="{{route('posts.create')}}" class="btn btn-lg btn-primary">Create Post</a>

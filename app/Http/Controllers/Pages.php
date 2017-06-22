@@ -19,9 +19,10 @@ class Pages extends Controller{
         
        $user_id =0;
 
-        // $user_id = Auth::user()->id;
+       // $user_id = Auth::user()->id;
 
          // dd($user_id);
+
 
 
 
@@ -29,6 +30,10 @@ class Pages extends Controller{
 
         return view('pages.home', compact('posts', 'user_id'));
         
+
+
+
+
 
       }
       public function getAbout() {
