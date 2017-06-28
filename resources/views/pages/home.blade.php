@@ -18,7 +18,9 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-md-12 col-sm-12 text-center">
+    @if (Auth::user())
       <a href="{{ url('posts') }}"><button class="btn btn-default text-center" style="padding: 1.4rem;border: 1px solid #31034A;">New Events</button></a>
+    @endif
     </div>
   </div>
 </div>

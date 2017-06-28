@@ -72,8 +72,11 @@ class PostController extends Controller
      */
     public function show($id)
     {
+
         $post = Post::find($id);
-        return view('posts.show')->withPost($post);
+        //photos "related" to this post 
+        $photos = $post->photo;
+        return view('posts.show', compact('post', 'photos'));
     }
 
     /**

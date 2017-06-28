@@ -1,24 +1,4 @@
-@section('title', '| Volunteering Events')
-
-<link rel="stylesheet" type="text/css" href="{{ asset('css/home.css')}}">
-
-@extends('main')
-@section('content')
-<div class="container">
-  <div class="row">
-    <div class="col-md-10">
-      <h1>Volunteering Events</h1>
-    </div>
-    <div class="col-md-2">
-      <a href="{{route('posts.create')}}" class="btn btn-lg btn-primary">Create Post</a>
-    </div>
-  </div>
-  </div>
-    <hr />
-    <div class="container-fluid">
-
-
-      <div class="row">
+<div class="row">
         @foreach ($posts as $post)
         <div class="col-md-6 col-lg-4">
           <div class="card"><img alt="Card image cap" class="card-img-top img-fluid" src="https://s-media-cache-ak0.pinimg.com/736x/55/03/94/550394c428e268868aa73e509302b84c.jpg" />
@@ -33,8 +13,3 @@
         </div>
         @endforeach
         </div>
-
-
-</div>
-
-@stop

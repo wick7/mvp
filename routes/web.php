@@ -14,7 +14,13 @@
 Route::get('/', 'Pages@getHome');
 Route::get('about', 'Pages@getAbout');
 Route::get('contact', 'Pages@getContact');
+
+//post route 
 Route::resource('posts', 'PostController');
+
+//photos route
+Route::get('photos/{id}','Photocontroller@create')->name('photos');
+Route::post('photos/{id}', 'Photocontroller@store')->name('photos');
 
 Auth::routes();
 
