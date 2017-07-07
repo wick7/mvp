@@ -26,12 +26,16 @@
               <h4 class="card-title" style="word-wrap: break-word;">{{$post->title}}</h4>
               <p class="card-text" style="word-wrap: break-word;">{{substr($post->body, 0, 50)}}{{strlen($post->body) > 50 ? "..." : ""}}</p>
               <a href="{{route('posts.show', $post->id)}}" class="btn btn-primary">View</a>
-              <a href="{{route('posts.edit', $post->id)}}" class="btn btn-success">Edit</a>
-              <a href="{{route('photos', $post->id)}}" class="btn btn-success">Add Photo</a>
+              @if (Auth::user())
+                <a href="{{route('posts.edit', $post->id)}}" class="btn btn-success">Edit</a>
+                <a href="{{route('photos', $post->id)}}" class="btn btn-success">Add Photo</a>
+              @endif
+
             </div>
           </div>
         </div>
         @endforeach
+
         </div>
 
 

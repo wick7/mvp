@@ -9,8 +9,9 @@
     <div class="col-md-8">
 
       <h1>{{$post->title}}</h1>
-      <p class="lead">{{$post->body}}</p>
+      <p class="lead">{{$post->description}}</p>
   </div>
+  @if (Auth::user())
   <div class="col-md-4">
       <div class="well">
         <dl class="dl-horizontal">
@@ -26,10 +27,10 @@
             {!! Html::linkRoute('posts.edit', 'Edit', array($post->id), array('class'=> 'btn btn-primary btn-block')) !!}
         </div>
         <div class="col-sm-3">
-            {!! Html::linkRoute('posts.create', 'create post', array($post->id), array('class'=> 'btn btn-primary btn-block')) !!}
+            {!! Html::linkRoute('photos', 'Add Photo', array($post->id), array('class'=> 'btn btn-primary btn-block')) !!}
         </div>
         <div class="col-sm-3">
-            {!! Html::linkRoute('photos', 'Add Photo', array($post->id), array('class'=> 'btn btn-primary btn-block')) !!}
+            {!! Html::linkRoute('posts.create', 'New Post', array($post->id), array('class'=> 'btn btn-primary btn-block')) !!}
         </div>
         <div class="col-sm-3">
             {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE'])!!}
@@ -39,13 +40,14 @@
     </div>
 </div>
 </div>
+@endif
 </div>
 </div>
-<hr />
-<div class="container">
-  @foreach ($photos as $photo)
-    <p>Title of Photo: {{ $photo->id }}</p>
-@endforeach  
+<hr /><div class="container">
+  @foreach ($photos as $photo) --}}
+    {{-- <p>Title of Photo: {{ $photo->title }}</p> --}}
+    <img style="width: 5em; height: 5em;" src="/storage/photo/{{$photo->post_photo}}">
+@endforeach
 
 </div>
 

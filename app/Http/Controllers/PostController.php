@@ -49,11 +49,11 @@ class PostController extends Controller
         $post = new Post;
 
         $post->title = $request->title;
-        $post->description = $request->body;
+        $post->description = $request->description;
         $post->start = new DateTime();
         $post->end = new DateTime();
         $post->user_id = Auth::user()->id;
-         
+
 
         $post->save();
 
@@ -74,9 +74,10 @@ class PostController extends Controller
     {
 
         $post = Post::find($id);
-        //photos "related" to this post 
+        //photos "related" to this post
         $photos = $post->photo;
         return view('posts.show', compact('post', 'photos'));
+
     }
 
     /**

@@ -29,24 +29,24 @@ class PhotoController extends Controller
     		'title'=>'required',
     		'post_photo'=>'image|nullable|max:1999'
     		]);
-    	//handle file uploade 
+    	//handle file uploade
     	if($request->hasFile('post_photo')){
-    		//Get Filename with the Extention 
+    		//Get Filename with the Extention
     		$filenameWithExt = $request->file('post_photo')->getClientOriginalName();
-    		// Get Just Filename 
+    		// Get Just Filename
     		$filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
     		// Get Just ext
     		$extention = $request->file('post_photo')->getClientOriginalExtension();
-    		//file to store 
+    		//file to store
     		$fileNametoStore = $filename.'_'.time().'.'.$extention;
-    		//uploade image 
-    		$path = $request->file('post_photo')->storeAs('public/photo', $fileNametoStore); 
+    		//uploade image
+    		$path = $request->file('post_photo')->storeAs('public/photo', $fileNametoStore);
     	} else{
     		$fileNametoStore = 'noimage.jpg';
     	}
 
-    	
-		//create Photo 
+
+		//create Photo
     	$post = new Photo;
         $post->title = $request->title;
         $post->description = $request->description;
