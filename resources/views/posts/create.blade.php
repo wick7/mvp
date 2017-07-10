@@ -21,8 +21,11 @@
         {{ Form::label('title', 'Title:')}}
         {{ Form::text('title', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '100'))}}
 
+        {{ Form::label('location', "Location:", array('style' => 'margin-top: 1em'))}}
+        {{ Form::text('address_city', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '25'))}}
+
         {{ Form::label('body', "Post Body:", array('style' => 'margin-top: 1em'))}}
-        {{ Form::textarea('body', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '355'))}}
+        {{ Form::textarea('description', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '355'))}}
 
         {{ Form::submit('Create Post', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 1em'))}}
       {!! Form::close() !!}

@@ -26,7 +26,7 @@ class Pages extends Controller{
 
 
 
-        $posts = Post::paginate(3);
+        $posts = Post::orderBy('created_at','desc')->paginate(3);
 
         return view('pages.home', compact('posts', 'user_id'));
 

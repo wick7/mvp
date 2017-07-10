@@ -9,6 +9,7 @@
     <div class="col-md-8">
 
       <h1>{{$post->title}}</h1>
+      <h3>{{$post->address_city}}</h3>
       <p class="lead">{{$post->description}}</p>
   </div>
   @if (Auth::user())

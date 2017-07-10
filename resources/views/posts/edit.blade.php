@@ -10,8 +10,21 @@
   <div class="row">
     <div class="col-md-8">
 
-      {{ Form::text('title', null, ['class' => 'form-control']) }}
-      {{ Form::textarea('body', null, ['class' => 'form-control']) }}
+      {{ Form::label('title', 'Title:')}}
+      {{ Form::text('title', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '100'))}}
+
+      {{ Form::label('location', "Location:", array('style' => 'margin-top: 1em'))}}
+      {{ Form::text('address_city', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '25'))}}
+
+      {{ Form::label('body', "Post Body:", array('style' => 'margin-top: 1em'))}}
+      {{ Form::textarea('description', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '355'))}}
+
+      {{-- {{ Form::text('title', null, ['class' => 'form-control']) }}
+
+      {{ Form::label('location', "Location:", array('style' => 'margin-top: 1em'))}}
+      {{ Form::text('address_city', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '25'))}}
+
+      {{ Form::textarea('body', null, ['class' => 'form-control']) }} --}}
     </div>
     <div class="col-md-4">
       <div class="well">
