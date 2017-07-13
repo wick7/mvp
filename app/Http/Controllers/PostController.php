@@ -51,6 +51,9 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->description = $request->description;
         $post->address_city = $request->address_city;
+        // address_street used to store date
+        $post->address_street = $request->address_street;
+        // $post->event_date = $request->event_date;
         $post->start = new DateTime();
         $post->end = new DateTime();
         $post->user_id = Auth::user()->id;

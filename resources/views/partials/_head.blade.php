@@ -14,6 +14,10 @@
         <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 
+        <!-- DateTimePicker -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/parsely.css')}}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
         <!-- Styles -->
         <style>
