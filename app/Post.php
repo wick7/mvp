@@ -15,5 +15,9 @@ class Post extends Model
     {
     	return $this->hasMany(Photo::class);
     }
+     public function organization()
+    {
+    	return $this->Belongsto(Organization::class);
+    }
 
 }

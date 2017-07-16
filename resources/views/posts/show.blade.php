@@ -1,7 +1,7 @@
 @section('title', '| Event')
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/parsely.css')}}">
-
+<link rel="stylesheet" type="text/css" href="/css/ImageLib.css">
 @extends('main')
 @section('content')
 <div class="container">
@@ -42,12 +42,28 @@
 </div>
 </div>
 <hr />
-<div class="container">
+<div class="well">
+    <div class="row">
+ <h4>Photos From Event</h4>       
   @foreach ($photos as $photo)
-    <p>Title of Photo: {{ $photo->id }}</p>
-@endforeach  
+  <ul style="list-style: none;">
+   <p>Title of Photo: {{ $photo->title }}</p>
+   <li class="crop">
+    
+    <img style="width: 100%" src="/storage/photo/{{$photo->post_photo}}">
 
+    </li>
+    {!! Form::open(['route' => ['photos', $photo->id], 'method' => 'DELETE'])!!}
+            {!! Form::submit('Delete', array('class'=> 'btn btn-danger btn-block')) !!}
+            {!! Form::token() !!}
+            {!! Form::close() !!}
+    {!! Html::linkRoute('photos_edit', 'Edit', array($photo->id), array('class'=> 'btn btn-primary btn-block')) !!}
+    </ul>
+
+@endforeach  
 </div>
+</div>
+
 
 
 
