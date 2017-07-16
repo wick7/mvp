@@ -6,12 +6,14 @@
 @section('content')
 
 <div class="container">
-  {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT'])!!}
+  {!! Form::model($post, ['route' => ['photos', $post->id], 'method' => 'PUT', 'enctype'=> 'multipart/form-data'])!!}
   <div class="row">
     <div class="col-md-8">
 
       {{ Form::text('title', null, ['class' => 'form-control']) }}
-      {{ Form::textarea('body', null, ['class' => 'form-control']) }}
+      {{ Form::textarea('description', null, ['class' => 'form-control']) }}
+      {{ Form::label('post_photo', 'Uploade Photo:')}}
+      {{ Form::file('post_photo') }}
     </div>
     <div class="col-md-4">
       <div class="well">
@@ -25,7 +27,7 @@
         </dl>
         <div class="row">
           <div class="col-sm-6">
-            {!! Html::linkRoute('posts.show', 'Cancel', array($post->id), array('class'=> 'btn btn-danger btn-block')) !!}
+           
           </div>
           <div class="col-sm-6">
 

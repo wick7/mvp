@@ -13,7 +13,7 @@
       <p class="lead">{{$post->description}}</p>
   </div>
   <div class="col-md-4">
-    <img class="img-thumbnail" src='{{$post->address_street}}' />
+    <img class="img-thumbnail" src="https://s-media-cache-ak0.pinimg.com/736x/55/03/94/550394c428e268868aa73e509302b84c.jpg" />
   </div>
   </div>
   <hr /><div class="container">
@@ -56,7 +56,7 @@
 @endif
 </div>
 </div>
-
+<<<<<<< HEAD
 <hr />
 <div class="well">
     <div class="row">
@@ -80,6 +80,9 @@
 </div>
 </div>
 
+=======
+
+>>>>>>> 6a2694b30c506a3dc95222ccebe63e180752a2c4
 
 
 

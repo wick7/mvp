@@ -17,10 +17,10 @@
     <div class="row">
       <div class="col-md-2 col-lg-2 col-xs-2"></div>
       <div class="col-md-8 col-lg-8 col-xs-8">
-      {!! Form::open(['route' => ['photos', $post_id], 'files' => true]) !!}
+      {!! Form::open(['route' => ['photos', $post_id], 'method'=>'POST', 'enctype'=> 'multipart/form-data' ]) !!}
         
-        {{ Form::label('title', 'Title:')}}
-        {{ Form::text('title', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '100'))}}
+        
+        {{ Form::text('title', null, array('class' => 'form-control', 'required' => '' , 'maxlength' => '100'))}}
         
         {{ Form::label('description', "Post Body:", array('style' => 'margin-top: 1em'))}}
         {{ Form::textarea('description', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '355'))}}

@@ -29,9 +29,15 @@ class PhotoController extends Controller
     	$this->validate($request,[
     		'description'=>'required',
     		'title'=>'required',
+<<<<<<< HEAD
+    		'post_photo'=>'image|nullable|max:1999' 
+    		]); 
+    	//handle file uploade 
+=======
     		'post_photo'=>'image|nullable|max:1999'
     		]);
     	//handle file uploade
+>>>>>>> 6a2694b30c506a3dc95222ccebe63e180752a2c4
     	if($request->hasFile('post_photo')){
     		//Get Filename with the Extention
     		$filenameWithExt = $request->file('post_photo')->getClientOriginalName();
@@ -41,12 +47,16 @@ class PhotoController extends Controller
     		$extention = $request->file('post_photo')->getClientOriginalExtension();
     		//file to store
     		$fileNametoStore = $filename.'_'.time().'.'.$extention;
+<<<<<<< HEAD
     		//uploade image 
     		// $path = $request->file('post_photo')->storeAs('', $fileNametoStore); 
     		$path =Storage::putFileAs('public/photo', $request->file('post_photo'), $fileNametoStore);
     		// dd($path);
     		
-
+=======
+    		//uploade image
+    		$path = $request->file('post_photo')->storeAs('public/photo', $fileNametoStore);
+>>>>>>> 6a2694b30c506a3dc95222ccebe63e180752a2c4
     	} else{
     		$fileNametoStore = 'noimage.jpg';
     	}
