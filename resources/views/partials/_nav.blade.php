@@ -14,14 +14,13 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-align-center"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{{ url('/') }}">HOME</a></li>
-            <li><a href="{{ url('about') }}">ABOUT</a></li>
-            <li><a href="{{ url('contact') }}">CONTACT</a></li>
+            <li><a href="{{ url('posts') }}">EVENTS</a></li>
 
-            @if (Auth::user())
+            {{-- @if (Auth::user())
 
-            <li><a href="{{ url('posts') }}">BLOG</a></li>
 
-            @endif
+
+            @endif --}}
 
           </ul>
         </li>

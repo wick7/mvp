@@ -16,7 +16,7 @@ use Auth;
 class Pages extends Controller{
 
       public function getHome() {
-        
+
        $user_id =0;
 
        // $user_id = Auth::user()->id;
@@ -26,10 +26,10 @@ class Pages extends Controller{
 
 
 
-        $posts = Post::paginate(5);
+        $posts = Post::orderBy('created_at','desc')->paginate(3);
 
         return view('pages.home', compact('posts', 'user_id'));
-        
+
 
 
 

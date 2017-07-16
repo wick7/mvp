@@ -56,7 +56,7 @@
 @endif
 </div>
 </div>
-
+<<<<<<< HEAD
 <hr />
 <div class="well">
     <div class="row">
@@ -80,6 +80,9 @@
 </div>
 </div>
 
+=======
+
+>>>>>>> 6a2694b30c506a3dc95222ccebe63e180752a2c4
 
 
 

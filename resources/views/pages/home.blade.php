@@ -18,13 +18,13 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-md-12 col-sm-12 text-center">
-    @if (Auth::user())
-      <a href="{{ url('posts') }}"><button class="btn btn-default text-center" style="padding: 1.4rem;border: 1px solid #31034A;">New Events</button></a>
-    @endif
+
+      <a href="{{ url('posts') }}"><button class="btn btn-defualt text-center" style="padding: 1.4rem;border: 1px solid #31034A;background-color:#31034A;color:white;">New Events</button></a>
+
     </div>
   </div>
 </div>
-      <div class="container-fluid">
+      {{-- <div class="container-fluid">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
           <!-- Indicators -->
@@ -91,24 +91,28 @@
           <p>Sed ut perspiciatis unde</p><button type="button" class="btn btn-primary">Learn More</button></div>
       </div>
     </div>
-  </div>
+  </div> --}}
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12 col-xs-12 col-lg-12 text-center" style="font-size: 5em;">
-                UPCOMING EVENTS
+                RECENTLY ADDED
             </div>
           </div>
         </div>
         <div class="container-fluid">
           <div class="row">
             @foreach ($posts as $post)
-            <div class="col-md-6 col-lg-4">
-              <div class="card"><img alt="Card image cap" class="card-img-top img-fluid" src="https://s-media-cache-ak0.pinimg.com/736x/55/03/94/550394c428e268868aa73e509302b84c.jpg" />
+            <div class="col-md-6 col-lg-4 col-4-xs">
+              <div class="card"><img style="height:50%; width: auto;" alt="Card image cap" class="card-img-top img-fluid img-thumbnail" src="https://s-media-cache-ak0.pinimg.com/736x/55/03/94/550394c428e268868aa73e509302b84c.jpg" />
                 <div class="card-block" style="margin-bottom: 1em;">
                   <h4 class="card-title" style="word-wrap: break-word;">{{$post->title}}</h4>
-                  <p class="card-text" style="word-wrap: break-word;">{{substr($post->body, 0, 50)}}{{strlen($post->body) > 50 ? "..." : ""}}</p>
+                  <h5 class="card-title" style="word-wrap: break-word; margin-top: -.5em;">{{$post->address_city}}</h5>
+                  <h6 class="card-title" style="word-wrap: break-word; margin-top: -.5em;">{{$post->address_street}}</h6>
+                  <p class="card-text" style="word-wrap: break-word;">{{substr($post->description, 0, 50)}}{{strlen($post->description) > 50 ? "..." : ""}}</p>
                   <a href="{{route('posts.show', $post->id)}}" class="btn btn-primary">View</a>
+                  @if (Auth::user())
                   <a href="{{route('posts.edit', $post->id)}}" class="btn btn-success">Edit</a>
+                @endif
                 </div>
               </div>
             </div>

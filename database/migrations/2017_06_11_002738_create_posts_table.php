@@ -26,6 +26,7 @@ class CreatePostsTable extends Migration
             $table->text('address_state')->nullable();
             $table->integer('address_zip')->nullable();
             $table->timestamps();
+
         });
     }
 

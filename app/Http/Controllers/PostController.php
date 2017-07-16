@@ -42,18 +42,22 @@ class PostController extends Controller
         //validate
         $this->validate($request, array(
             'title' => 'required|max:255',
-            'body' => 'required'
+            'description' => 'required'
         ));
 
         //store in database - no if/else statements needed for L 5.4
         $post = new Post;
 
         $post->title = $request->title;
-        $post->description = $request->body;
+        $post->description = $request->description;
+        $post->address_city = $request->address_city;
+        // address_street used to store date
+        $post->address_street = $request->address_street;
+        // $post->event_date = $request->event_date;
         $post->start = new DateTime();
         $post->end = new DateTime();
         $post->user_id = Auth::user()->id;
-         
+
 
         $post->save();
 
@@ -74,9 +78,10 @@ class PostController extends Controller
     {
 
         $post = Post::find($id);
-        //photos "related" to this post 
+        //photos "related" to this post
         $photos = $post->photo;
         return view('posts.show', compact('post', 'photos'));
+
     }
 
     /**
@@ -105,13 +110,14 @@ class PostController extends Controller
     {
       $this->validate($request, array(
           'title' => 'required|max:255',
-          'body' => 'required'
+          'description' => 'required'
       ));
 
       $post = Post::find($id);
 
       $post->title = $request->input('title');
-      $post->body = $request->input('body');
+      $post->address_city = $request->input('address_city');
+      $post->description = $request->input('description');
 
       $post->save();
 
