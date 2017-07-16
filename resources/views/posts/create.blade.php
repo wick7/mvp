@@ -22,8 +22,11 @@
         {{ Form::label('org_name', "Organization Name:", array('style' => 'margin-top: 1em'))}}
         {{ Form::text('org_name', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '25'))}}
 
-        {{ Form::label('address_street', "Date:", array('style' => 'margin-top: 1em'))}}
-        {{ Form::text('address_street', null, array('class' => 'form-control input-append date form_datetime', 'id' => 'datepicker', 'required' => '', 'maxlength' => '25'))}}
+        {{-- {{ Form::label('address_street', "Date:", array('style' => 'margin-top: 1em'))}}
+        {{ Form::text('address_street', null, array('class' => 'form-control input-append date form_datetime', 'id' => 'datepicker', 'required' => '', 'maxlength' => '25'))}} --}}
+
+        {{ Form::label('address_street', "Photo Link:", array('style' => 'margin-top: 1em'))}}
+        {{ Form::text('address_street', null, array('class' => 'form-control input-append', 'required' => '', 'maxlength' => '400'))}}
 
         {{ Form::label('location', "Location:", array('style' => 'margin-top: 1em'))}}
         {{ Form::text('address_city', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '25'))}}

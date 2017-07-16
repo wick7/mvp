@@ -103,11 +103,11 @@
           <div class="row">
             @foreach ($posts as $post)
             <div class="col-md-6 col-lg-4 col-4-xs">
-              <div class="card"><img style="height:50%; width: auto;" alt="Card image cap" class="card-img-top img-fluid img-thumbnail" src="https://s-media-cache-ak0.pinimg.com/736x/55/03/94/550394c428e268868aa73e509302b84c.jpg" />
+              <div class="card"><img style="height:50%; width: auto;" alt="Card image cap" class="card-img-top img-fluid img-thumbnail" src="{{$post->address_street}}" />
                 <div class="card-block" style="margin-bottom: 1em;">
                   <h4 class="card-title" style="word-wrap: break-word;">{{$post->title}}</h4>
                   <h5 class="card-title" style="word-wrap: break-word; margin-top: -.5em;">{{$post->address_city}}</h5>
-                  <h6 class="card-title" style="word-wrap: break-word; margin-top: -.5em;">{{$post->address_street}}</h6>
+                  {{-- <h6 class="card-title" style="word-wrap: break-word; margin-top: -.5em;">{{$post->address_street}}</h6> --}}
                   <p class="card-text" style="word-wrap: break-word;">{{substr($post->description, 0, 50)}}{{strlen($post->description) > 50 ? "..." : ""}}</p>
                   <a href="{{route('posts.show', $post->id)}}" class="btn btn-primary">View</a>
                   @if (Auth::user())

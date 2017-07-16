@@ -13,7 +13,7 @@
       <p class="lead">{{$post->description}}</p>
   </div>
   <div class="col-md-4">
-    <img class="img-thumbnail" src="https://s-media-cache-ak0.pinimg.com/736x/55/03/94/550394c428e268868aa73e509302b84c.jpg" />
+    <img class="img-thumbnail" src='{{$post->address_street}}' />
   </div>
   </div>
   <hr /><div class="container">
