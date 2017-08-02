@@ -8,6 +8,7 @@
   <div class="row">
     <div class="col-md-8">
       <h1>{{$post->title}}</h1>
+      <h3> Hosted by: {{$organization->org_name}} </h3>
       <h3>{{$post->address_city}}</h3>
       <h4>{{$post->address_street}}</h4>
       <p class="lead">{{$post->description}}</p>

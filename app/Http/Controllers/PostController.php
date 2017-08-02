@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Organization;
 use Session;
 use DateTime;
 use Auth;
+use Storage;
 
 class PostController extends Controller
 {
@@ -28,7 +30,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $organizations = Organization::all();
+
+        return view('posts.create', compact('organizations'));
     }
 
     /**
@@ -39,23 +43,53 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //validate
+
         $this->validate($request, array(
             'title' => 'required|max:255',
-            'description' => 'required'
+            'description' => 'required',
+            'avatar_photo'=>'image|nullable|max:1999'
         ));
+
+
+        // $start_date = $request->start_time;
+
+        // DateTime::createFromFormat('j-M-Y', '15-Feb-2009');
+
+        // dd($start_date);
+
+        //handle file uploade
+        if($request->hasFile('avatar_photo')){
+            //Get Filename with the Extention
+            $filenameWithExt = $request->file('avatar_photo')->getClientOriginalName();
+            // Get Just Filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get Just ext
+            $extention = $request->file('avatar_photo')->getClientOriginalExtension();
+            //file to store
+            $fileNametoStore = $filename.'_'.time().'.'.$extention;
+            //uploade image 
+            // $path = $request->file('post_photo')->storeAs('', $fileNametoStore); 
+            $path =Storage::putFileAs('public/avatar', $request->file('avatar_photo'), $fileNametoStore);
+            // dd($path);
+            
+            //places Default file in storage
+        } else{
+            $fileNametoStore = 'Default.png';
+        }
 
         //store in database - no if/else statements needed for L 5.4
         $post = new Post;
 
+        $post->start = $request->start_time;
+        $post->end = $request->end_time;
+        $post->avatar_photo = $fileNametoStore;
         $post->title = $request->title;
         $post->description = $request->description;
         $post->address_city = $request->address_city;
         // address_street used to store date
         $post->address_street = $request->address_street;
+        $post->organization_id = $request->org_id;
         // $post->event_date = $request->event_date;
-        $post->start = new DateTime();
-        $post->end = new DateTime();
         $post->user_id = Auth::user()->id;
 
 
@@ -78,9 +112,10 @@ class PostController extends Controller
     {
 
         $post = Post::find($id);
+        $organization = Organization::find($post->organization_id);
         //photos "related" to this post
         $photos = $post->photo;
-        return view('posts.show', compact('post', 'photos'));
+        return view('posts.show', compact('post', 'photos', 'organization'));
 
     }
 
