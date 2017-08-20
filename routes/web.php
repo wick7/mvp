@@ -12,10 +12,11 @@
 */
 
 Route::get('/', 'Pages@getHome');
-Route::get('about', 'Pages@getAbout');
-Route::get('contact', 'Pages@getContact');
+Route::get('terms', 'Pages@getTerms');
+Route::get('privacy', 'Pages@getPrivacy');
+Route::get('attribution', 'Pages@getAttribution');
 
-//post route 
+//post route
 Route::resource('posts', 'PostController');
 
 //photos route

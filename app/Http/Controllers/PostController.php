@@ -67,11 +67,11 @@ class PostController extends Controller
             $extention = $request->file('avatar_photo')->getClientOriginalExtension();
             //file to store
             $fileNametoStore = $filename.'_'.time().'.'.$extention;
-            //uploade image 
-            // $path = $request->file('post_photo')->storeAs('', $fileNametoStore); 
+            //uploade image
+            // $path = $request->file('post_photo')->storeAs('', $fileNametoStore);
             $path =Storage::putFileAs('public/avatar', $request->file('avatar_photo'), $fileNametoStore);
             // dd($path);
-            
+
             //places Default file in storage
         } else{
             $fileNametoStore = 'Default.png';
@@ -80,14 +80,15 @@ class PostController extends Controller
         //store in database - no if/else statements needed for L 5.4
         $post = new Post;
 
-        $post->start = $request->start_time;
-        $post->end = $request->end_time;
+        $post->start = $request->start;
+        $post->end = $request->end;
         $post->avatar_photo = $fileNametoStore;
+        $post->org_name = $request->org_name;
+        $post->org_site = $request->org_site;
         $post->title = $request->title;
         $post->description = $request->description;
         $post->address_city = $request->address_city;
         // address_street used to store date
-        $post->address_street = $request->address_street;
         $post->organization_id = $request->org_id;
         // $post->event_date = $request->event_date;
         $post->user_id = Auth::user()->id;

@@ -1,31 +1,44 @@
-@section('title', '| Event')
+@section('title', '| Events')
 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/parsely.css')}}">
-<link rel="stylesheet" type="text/css" href="/css/ImageLib.css">
+{{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/parsely.css')}}">
+<link rel="stylesheet" type="text/css" href="/css/ImageLib.css"> --}}
 @extends('main')
 @section('content')
+@include('partials._head')
+@include('partials._nav2')
+
+<section>
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <h1>{{$post->title}}</h1>
-      <h3> Hosted by: {{$organization->org_name}} </h3>
-      <h3>{{$post->address_city}}</h3>
-      <h4>{{$post->address_street}}</h4>
-      <p class="lead">{{$post->description}}</p>
+      <a href="{{$post->org_site}}"><h1>{{$post->org_name}}</h1></a>
+      <h4>Title: {{$post->title}}</h4>
+      <h5>Date: {{ date('F d, Y', strtotime($post->start)) }}</h5>
+      <h5>Time: {{ date('h:i:sa', strtotime($post->start)) }} - {{ date('h:i:sa', strtotime($post->end)) }}</h5>
+      <h5>Location:{{$post->address_city}}</h5>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Description:</h2>
+          <p class="lead" style="margin-left: -.1em; text-indent: 50px;">{{$post->description}}</p>
+        </div>
+      </div>
   </div>
   <div class="col-md-4">
-    <img class="img-thumbnail" src='{{$post->address_street}}' />
+    <img class="img-thumbnail" src="https://images.pexels.com/photos/459099/pexels-photo-459099.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
   </div>
   </div>
-  <hr /><div class="container">
-    @foreach ($photos as $photo) --}}
-      {{-- <p>Title of Photo: {{ $photo->title }}</p> --}}
-      <img style="width: 5em; height: 5em;" src="/storage/photo/{{$photo->post_photo}}">
-  @endforeach
-
-  </div>
+</div>
 
   @if (Auth::user())
+    <div class="row">
+      <div class="col-md-12">
+        @foreach ($photos as $photo) --}}
+          {{-- <p>Title of Photo: {{ $photo->title }}</p> --}}
+          <img style="width: 5em; height: 5em;" src="/storage/photo/{{$photo->post_photo}}">
+      @endforeach
+      </div>
+  </div>
   <div class="col-md-12">
       <div class="well">
         <dl class="dl-horizontal">
@@ -54,19 +67,15 @@
     </div>
 </div>
 </div>
-@endif
-</div>
-</div>
-
 <hr />
-<div class="well">
+{{-- <div class="well">
     <div class="row">
- <h4>Photos From Event</h4>       
+ <h4>Photos From Event</h4>
   @foreach ($photos as $photo)
   <ul style="list-style: none;">
    <p>Title of Photo: {{ $photo->title }}</p>
    <li class="crop">
-    
+
     <img style="width: 100%" src="/storage/photo/{{$photo->post_photo}}">
 
     </li>
@@ -77,12 +86,13 @@
     {!! Html::linkRoute('photos_edit', 'Edit', array($photo->id), array('class'=> 'btn btn-primary btn-block')) !!}
     </ul>
 
-@endforeach  
+@endforeach
 </div>
+</div> --}}
+
+@endif
 </div>
-
-
-
-
+</section>
+@include('partials._footer')
 
 @endsection
