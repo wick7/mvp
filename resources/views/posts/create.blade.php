@@ -27,17 +27,19 @@
         {{Form::file('avatar_photo')}}
 
         
+
+        
         <input type="datetime-local" name="start_time" min="2000-01-02">
 
          
         <input type="datetime-local" name="end_time" min="2000-01-02"><br>
-        <select name="org_id">
+        <!-- <select name="org_id">
 
         @foreach ($organizations as $org)
           <option value= {{$org->id}} >{{$org->org_name}}</option>
-        @endforeach
+        @endforeach 
 
-        </select>
+        </select> -->
 
         {{ Form::label('location', "Location:", array('style' => 'margin-top: 1em'))}}
         {{ Form::text('address_city', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '25'))}}
@@ -47,6 +49,8 @@
 
         {{ Form::submit('Create Post', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 1em'))}}
       {!! Form::close() !!}
+
+       <!-- <a href="{{route('org')}}" class="btn btn-success">Create New Organization</a> -->
     </div>
     <div class="col-md-2 col-lg-2 col-xs-2"></div>
   </div>

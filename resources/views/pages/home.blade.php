@@ -41,7 +41,7 @@
 
               <img class="carousel-img" src="https://images.pexels.com/photos/68147/waterfall-thac-dray-nur-buon-me-thuot-daklak-68147.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Los Angeles">
               <div class="carousel-caption">
-                <h1 style="color: white;font-size: 5rem;">FUCK'N A</h1>
+                <h1 style="color: white;font-size: 5rem;">What a burger</h1>
               </div>
             </div>
 

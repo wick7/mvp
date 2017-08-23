@@ -76,6 +76,8 @@ class PhotoController extends Controller
             ]); 
         //handle file uploade 
         if($request->hasFile('post_photo')){
+            //remove existing photo in storage.
+            Storage::delete('public/photo/'.$post->post_photo);
             //Get Filename with the Extention 
             $filenameWithExt = $request->file('post_photo')->getClientOriginalName();
             // Get Just Filename 

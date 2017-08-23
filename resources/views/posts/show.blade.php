@@ -11,6 +11,9 @@
       <h3> Hosted by: {{$organization->org_name}} </h3>
       <h3>{{$post->address_city}}</h3>
       <h4>{{$post->address_street}}</h4>
+      <p>Start: {{ date('F d, Y h:i:sa', strtotime($post->start)) }} <br />
+         End: {{ date('F d, Y h:i:sa', strtotime($post->end)) }}<br />
+      </p>
       <p class="lead">{{$post->description}}</p>
   </div>
   <div class="col-md-4">
