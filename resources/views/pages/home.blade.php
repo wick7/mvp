@@ -1,124 +1,116 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/home.css')}}">
+
 @section('title')
 @extends('main')
 @section('content')
+@include('partials._head')
+@include('partials._nav')
 
-<div class="container-fluid sec_one">
-  <div class="row" style="padding: 3em;"></div>
-  <div class="row">
-    <div class="col-xs-2 col-md-2 col-sm-2"></div>
-    <div class="col-xs-8 col-md-8 col-sm-8 page-header text-center" style="background-color: rgba(255, 255, 255, 0.6); border-radius: 25px;" >
-      <h1 class="title m-b-md">CARROT PATH</h1>
-      <small style="font-size: 2rem;">Lorem ipsum dolor sit amet</small>
+<body id="page-top" class="index">
+
+{{-- <header style="height: 100vh;background-image: url('https://images.pexels.com/photos/105234/pexels-photo-105234.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');"> --}}
+<header style="height: 100vh;background-image: url('https://images.pexels.com/photos/105234/pexels-photo-105234.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');">
+
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-heading">CARROT PATH</div>
+            <div class="intro-lead-in">Lorem ipsum dolor sit amet</div>
+            <a href="#about" class="page-scroll btn btn-xl" style="margin:1em;">Tell Me More</a>
+            <a href="{{ url('posts') }}" class="page-scroll btn btn-xl" style="margin:1em;">Show Me Events</a>
+        </div>
     </div>
-    <div class="col-xs-2 col-md-2 col-sm-2"></div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-12 col-sm-12 text-center">
+</header>
 
-      <a href="{{ url('posts') }}"><button class="btn btn-defualt text-center" style="padding: 1.4rem;border: 1px solid #31034A;background-color:#31034A;color:white;">New Events</button></a>
 
-    </div>
-  </div>
-</div>
-      {{-- <div class="container-fluid">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+<!-- Recent Section -->
 
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
+<section id="recent" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">RECENTLY ADDED</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+        </div>
+        <div class="row text-center">
+          @foreach ($posts as $post)
 
-            <li data-target="#myCarousel" data-slide-to="0"class="active" ></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
 
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-            <div class="item active">
-
-              <img class="carousel-img" src="https://images.pexels.com/photos/68147/waterfall-thac-dray-nur-buon-me-thuot-daklak-68147.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Los Angeles">
-              <div class="carousel-caption">
-                <h1 style="color: white;font-size: 5rem;">What a burger</h1>
+          <div class="col-md-4">
+            <div class="card"><img style="height:20em; width: 20em;" alt="Card image cap" class="card-img-top img-fluid img-thumbnail" src="/storage/avatar/{{$post->avatar_photo}}" />
+              <div class="card-block" style="margin-bottom: 1em;">
+                <h4 class="card-title" style="word-wrap: break-word;">{{$post->title}}</h4>
+                <h5>Date/Time:  {{ date('F d, Y', strtotime($post->start)) }} - {{ date('h:i:sa', strtotime($post->start)) }} - {{ date('h:i:sa', strtotime($post->end)) }}</h5>
+                <h5 class="card-title" style="word-wrap: break-word; margin-top: -.5em;">{{$post->address_city}}</h5>
+                {{-- <h6 class="card-title" style="word-wrap: break-word; margin-top: -.5em;">{{$post->address_street}}</h6> --}}
+                <p class="card-text" style="word-wrap: break-word;">{{substr($post->description, 0, 30)}}{{strlen($post->description) > 50 ? "..." : ""}}</p>
+                <a href="{{route('posts.show', $post->id)}}" class="btn btn-primary">View</a>
+                {{-- @if (Auth::user())
+                <a href="{{route('posts.edit', $post->id)}}" class="btn btn-success">Edit</a>
+              @endif --}}
               </div>
             </div>
-
-            <div class="item">
-              <img  class="carousel-img" src="https://images.pexels.com/photos/429248/pexels-photo-429248.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Chicago">
-            </div>
-
-            <div class="item">
-              <img class="carousel-img" src="https://images.pexels.com/photos/290657/pexels-photo-290657.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="New York">
-            </div>
           </div>
 
-          <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-          </a>
+          @endforeach
         </div>
-      </div>
-
-
-
-  <div class="container-fluid sec4">
-    <div class="container sec4_wrap">
-      <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-6 sec4_style" style="border-top:hidden; border-left:hidden;">
-          <h1>Utim</h1>
-          <img src="https://image.flaticon.com/icons/svg/287/287681.svg">
-          <p>Sed ut perspiciatis unde</p><button type="button" class="btn btn-primary">Learn More</button>
-        </div>
-        <div class="col-md-6 col-sm-6 col-xs-6 sec4_style" style="border-top:hidden; border-right:hidden;">
-          <h1>Unher</h1><img src="https://image.flaticon.com/icons/svg/61/61092.svg">
-          <p>Sed ut perspiciatis unde</p><button type="button" class="btn btn-primary">Learn More</button></div>
-      </div>
-      <!--        <hr class="sec4_hr"> -->
-      <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-6 sec4_style" style="border-bottom:hidden; border-left:hidden;">
-          <h1>Ipsum</h1><img src="https://image.flaticon.com/icons/svg/149/149125.svg">
-          <p>Sed ut perspiciatis unde</p><button type="button" class="btn btn-primary">Learn More</button></div>
-
-        <div class="col-md-6 col-sm-6 col-xs-6 sec4_style" style="border-bottom:hidden; border-right:hidden;">
-          <h1>Lorum</h1><img src="https://image.flaticon.com/icons/svg/182/182482.svg">
-          <p>Sed ut perspiciatis unde</p><button type="button" class="btn btn-primary">Learn More</button></div>
-      </div>
     </div>
-  </div> --}}
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12 col-xs-12 col-lg-12 text-center" style="font-size: 5em;">
-                RECENTLY ADDED
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">About</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
-          </div>
         </div>
-        <div class="container-fluid">
-          <div class="row">
-            @foreach ($posts as $post)
-            <div class="col-md-6 col-lg-4 col-4-xs">
-              <div class="card"><img style="height:50%; width: auto;" alt="Card image cap" class="card-img-top img-fluid img-thumbnail" src="{{$post->address_street}}" />
-                <div class="card-block" style="margin-bottom: 1em;">
-                  <h4 class="card-title" style="word-wrap: break-word;">{{$post->title}}</h4>
-                  <h5 class="card-title" style="word-wrap: break-word; margin-top: -.5em;">{{$post->address_city}}</h5>
-                  {{-- <h6 class="card-title" style="word-wrap: break-word; margin-top: -.5em;">{{$post->address_street}}</h6> --}}
-                  <p class="card-text" style="word-wrap: break-word;">{{substr($post->description, 0, 50)}}{{strlen($post->description) > 50 ? "..." : ""}}</p>
-                  <a href="{{route('posts.show', $post->id)}}" class="btn btn-primary">View</a>
-                  @if (Auth::user())
-                  <a href="{{route('posts.edit', $post->id)}}" class="btn btn-success">Edit</a>
-                @endif
-                </div>
-              </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <i style="font-size: 150px;"class="fa fa-bolt fa-5x"></i>
+                <h4 class="service-heading">At Vero</h4>
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
             </div>
-            @endforeach
+
+            <div class="col-md-4">
+                <i style="font-size: 150px;"class="fa fa-bullhorn fa-5x"></i>
+                <h4 class="service-heading">Adipisicing Elit</h4>
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            </div>
+
+            <div class="col-md-4">
+                <i style="font-size: 150px;"class="fa fa-user-circle fa-5x"></i>
+                <h4 class="service-heading">Minima Maxime</h4>
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            </div>
+
+    </div>
+</section>
+
+@include('partials._footer')
 
 
-          </div>
-        </div>
+
+<!-- jQuery -->
+<script src="vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/ad79f6db6a.js"></script>
+<!-- Contact Form JavaScript -->
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="js/contact_me.js"></script>
+
+<!-- Theme JavaScript -->
+<script src="js/agency.js"></script>
+
+</body>
+
+
 @endsection

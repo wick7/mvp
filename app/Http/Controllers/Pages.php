@@ -36,23 +36,31 @@ class Pages extends Controller{
 
 
       }
-      public function getAbout() {
+      public function getTerms() {
         // $first = 'Craig';
         // $last = 'Wickersham';
         //
         // $full = $first . ' ' . $last;
         // return view('pages.about')->with("fullname", $full);
         // return view('pages.about')->withFullname($full);
-        return view('pages.about');
+        return view('pages.terms');
       }
 
-      public function getContact() {
+      public function getPrivacy() {
         // $first = 'Craig';
         // $last = 'Wickersham';
         //
         // $full = $first . ' ' . $last;
         // return view('pages.about')->with("fullname", $full);
         // return view('pages.contact')->withFullname($full);
-        return view('pages.contact');
+        return view('pages.privacy');
       }
+
+      public function getAttribution() {
+
+        return view('pages.attribution');
+      }
+
+
+
 }

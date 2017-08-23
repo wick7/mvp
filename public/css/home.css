@@ -95,3 +95,21 @@ html, body {
 .sec4_style h1 {
   font-family: 'Raleway', sans-serif;
 }
+
+.footer {
+  background-color:black;
+  padding: 1em;
+  margin-left:auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.footer a {
+  color: white;
+}
+
+/*@media .foot-con and (min-width: 766px) {
+    body {
+        background-color: lightgreen;
+    }
+}*/
