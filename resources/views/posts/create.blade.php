@@ -31,19 +31,18 @@
         {{ Form::label('org_name', "Organization Name:", array('style' => 'margin-top: 1em'))}}
         {{ Form::text('org_name', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255'))}}<br>
 
+
         {{ Form::label('title', 'Title of Event:')}}
         {{ Form::text('title', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '100'))}}<br>
 
+
         {{ Form::label('avatar_photo', 'Upload Post Image:',array('style' => 'text-decoration: underline'))}}
         {{Form::file('avatar_photo')}}<br>
-
         {{ Form::label('Choose Start & End Date/Time:')}}<br>
         {{ Form::label('start', 'Begins:')}}
         <input type="datetime-local" name="start" min="2000-01-02">
-
         {{ Form::label('end', 'Ends:')}}
         <input type="datetime-local" name="end" min="2000-01-02"><br>
-
         {{ Form::label('location', "Location:", array('style' => 'margin-top: 1em'))}}
         {{ Form::text('address_city', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255'))}}
 
@@ -53,6 +52,8 @@
         {{ Form::submit('Create Post', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 1em'))}}
         <a href="{{ url('posts') }}"><div style='margin-top: 1em' class="btn btn-danger btn-lg btn-block">CANCEL</div></a>
       {!! Form::close() !!}
+
+       <!-- <a href="{{route('org')}}" class="btn btn-success">Create New Organization</a> -->
     </div>
     <div class="col-md-2 col-lg-2 col-xs-2"></div>
   </div>

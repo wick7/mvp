@@ -79,8 +79,9 @@ class PostController extends Controller
 
         //store in database - no if/else statements needed for L 5.4
         $post = new Post;
-
+        //date and time start
         $post->start = $request->start;
+        //date and time end
         $post->end = $request->end;
         $post->avatar_photo = $fileNametoStore;
         $post->org_name = $request->org_name;
@@ -113,6 +114,7 @@ class PostController extends Controller
     {
 
         $post = Post::find($id);
+        //Organization this post belongs to.
         $organization = Organization::find($post->organization_id);
         //photos "related" to this post
         $photos = $post->photo;

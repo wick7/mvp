@@ -26,6 +26,14 @@ Route::get('photos/edit/{id}','Photocontroller@edit')->name('photos_edit');
 Route::put('photos/{id}', 'Photocontroller@update')->name('photos');
 Route::delete('photos/{id}', 'Photocontroller@destroy')->name('photos');
 
+//Organization routes
+Route::get('Organization/{id}','OrganizationController@show')->name('orgshow');
+Route::get('Organization/create','OrganizationController@create')->name('org');
+Route::post('Organization/Post', 'OrganizationController@store')->name('orgpost');
+Route::get('Organization/edit/{id}','OrganizationController@edit')->name('organizations_edit');
+Route::put('Organization/{id}', 'OrganizationController@update')->name('organizations');
+Route::delete('Organization/{id}', 'OrganizationController@destroy')->name('organizations');
+
 
 Auth::routes();
 
