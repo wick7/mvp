@@ -32,7 +32,9 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
+            {{-- <a class="navbar-brand page-scroll" href="#page-top"><img style="width:6em; height: 6em; padding-bottom: 3em; background-color:yellow;" src="/images/logo.svg"/></a> --}}
             <a class="navbar-brand page-scroll" href="#page-top">CP</a>
+
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,13 +44,13 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#recent" style="color: white;">Recently Added</a>
+                    <a class="page-scroll collapse_nav" href="#recent" style="color: white;">Recently Added</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#about" style="color: white;">About</a>
+                    <a class="page-scroll collapse_nav" href="#about" style="color: white;">About</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="{{ url('posts') }}" style="color: white;">Listing</a>
+                    <a class="page-scroll collapse_nav" href="{{ url('posts') }}" style="color: white;">Listing</a>
                 </li>
             </ul>
         </div>
