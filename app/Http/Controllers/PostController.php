@@ -47,7 +47,9 @@ class PostController extends Controller
         $this->validate($request, array(
             'title' => 'required|max:255',
             'description' => 'required',
-            'avatar_photo'=>'image|nullable|max:1999'
+            'avatar_photo'=>'image|nullable|max:1999',
+            'start'=>'required|date|future_start',
+            'end' =>'date',
         ));
 
 
