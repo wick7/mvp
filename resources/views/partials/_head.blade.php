@@ -28,7 +28,7 @@
         <!-- DateTimePicker -->
         <link rel="stylesheet" type="text/css" href="{{ asset('css/parsely.css')}}">
         {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/agency.css')}}"> --}}
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/agency.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/agency.min.css')}}">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
