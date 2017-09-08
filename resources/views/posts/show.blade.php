@@ -11,11 +11,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <a href="{{$post->org_site}}"><h1>{{$post->org_name}}</h1></a>
-      <h4>Title: {{$post->title}}</h4>
+      <a href="{{$post->org_site}}"><h1>{{$post->title}}</h1></a>
+      <h4 style="display:inline-block;margin-right: 10px;">Organization:</h4>
+      <a style="display:inline-block;" href="{{$post->org_site}}"><h4>{{$post->org_name}}</h4></a>
       <h5>Date: {{ date('F d, Y', strtotime($post->start)) }}</h5>
-      <h5>Time: {{ date('h:i:sa', strtotime($post->start)) }} - {{ date('h:i:sa', strtotime($post->end)) }}</h5>
-      <h5>Location:{{$post->address_city}}</h5>
+      <h5>Time: {{ date('g:i a', strtotime($post->start)) }} - {{ date('g:i a', strtotime($post->end)) }}</h5>
+      <h5>Location: {{$post->address_city}}</h5>
 
       <div class="row">
         <div class="col-md-12">

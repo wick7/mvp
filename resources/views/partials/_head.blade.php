@@ -61,7 +61,7 @@
         <!--- Favacon Icon ------>
 
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="iamges/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="iamges/favicon.ico" type="image/x-icon">
 
 
     </head>

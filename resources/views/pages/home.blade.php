@@ -16,9 +16,9 @@
     <div class="container">
         <div class="intro-text">
             <div class="intro-heading">CARROT PATH</div>
-            <div class="intro-lead-in">Lorem ipsum dolor sit amet</div>
-            <a href="#about" class="page-scroll btn btn-xl" style="margin:1em;">Tell Me More</a>
-            <a href="{{ url('posts') }}" class="page-scroll btn btn-xl" style="margin:1em;">Show Me Events</a>
+            <div class="intro-lead-in">A Platform Creating A Simplified Volunteering Experience</div>
+            <a href="#about" class="page-scroll btn btn-xl" style="margin-top:3em;margin-right: 2em;">Tell Me More</a>
+            <a href="{{ url('posts') }}" class="page-scroll btn btn-xl" style="margin-top:3em;margin-right: 2em;">Show Me More</a>
         </div>
     </div>
 </header>
@@ -30,8 +30,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">RECENTLY ADDED</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 class="section-heading" style="margin-bottom: 2em;">RECENTLY ADDED</h2>
+                {{-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> --}}
             </div>
         </div>
         <div class="row text-center">
@@ -39,11 +39,12 @@
 
 
           <div class="col-md-4">
-            <div class="card"><img style="height:20em; width: 20em;" alt="Card image cap" class="card-img-top img-fluid img-thumbnail" src="/storage/avatar/{{$post->avatar_photo}}" />
+            <div class="card"><a href="{{route('posts.show', $post->id)}}"><img style="height:20em; width: 20em;" alt="Card image cap" class="card-img-top img-fluid img-thumbnail" src="/storage/avatar/{{$post->avatar_photo}}" /></a>
               <div class="card-block" style="margin-bottom: 1em;">
-                <h4 class="card-title" style="word-wrap: break-word;">{{$post->title}}</h4>
-                <h5>Date/Time:  {{ date('F d, Y', strtotime($post->start)) }} - {{ date('h:i:sa', strtotime($post->start)) }} - {{ date('h:i:sa', strtotime($post->end)) }}</h5>
-                <h5 class="card-title" style="word-wrap: break-word; margin-top: -.5em;">{{$post->address_city}}</h5>
+                <a href="{{route('posts.show', $post->id)}}"><h4 class="card-title" style="word-wrap: break-word;">{{$post->title}}</h4></a>
+                <h5>Date:  {{ date('F d, Y', strtotime($post->start)) }}</h5>
+                <h5>Time: {{ date('g:i a', strtotime($post->start)) }} - {{ date('g:i a', strtotime($post->end)) }}</h5>
+                <h5 class="card-title" style="word-wrap: break-word; margin-top: -.5em;"> Location: {{$post->address_city}}</h5>
                 {{-- <h6 class="card-title" style="word-wrap: break-word; margin-top: -.5em;">{{$post->address_street}}</h6> --}}
                 <p class="card-text" style="word-wrap: break-word;">{{substr($post->description, 0, 30)}}{{strlen($post->description) > 50 ? "..." : ""}}</p>
                 <a href="{{route('posts.show', $post->id)}}" class="btn btn-primary">View</a>
@@ -64,27 +65,27 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">About</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 class="section-heading" style="margin-bottom: 2em;">About</h2>
+                {{-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> --}}
             </div>
         </div>
         <div class="row text-center">
             <div class="col-md-4">
-                <i style="font-size: 150px;"class="fa fa-bolt fa-5x"></i>
-                <h4 class="service-heading">At Vero</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <i style="font-size: 150px;"class="fa fa-users fa-5x"></i>
+                <h4 class="service-heading">In a given year, 25% of americans volunteer, only 33% do so next year</h4>
+                <p class="text-muted">We help make finding volunteering events easier</p>
             </div>
 
             <div class="col-md-4">
-                <i style="font-size: 150px;"class="fa fa-bullhorn fa-5x"></i>
-                <h4 class="service-heading">Adipisicing Elit</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <i style="font-size: 150px;"class="fa fa-clock-o fa-5x"></i>
+                <h4 class="service-heading">85% of non profit organizations need volunteers to operate effectively</h4>
+                <p class="text-muted">We find and post upcoming events in your community</p>
             </div>
 
             <div class="col-md-4">
-                <i style="font-size: 150px;"class="fa fa-user-circle fa-5x"></i>
-                <h4 class="service-heading">Minima Maxime</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <i style="font-size: 150px;"class="fa fa-level-up fa-5x"></i>
+                <h4 class="service-heading">Our goal is to create a sustainable volunteering experience</h4>
+                <p class="text-muted">We work directly with Nonprofits to ensure the quality of our info</p>
             </div>
 
     </div>

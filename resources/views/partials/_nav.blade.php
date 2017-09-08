@@ -32,7 +32,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top"><img style="width:3em;height:3em; background-color:; position: absolute; bottom:4px;" src="/images/logo.svg"/></a>
+            <a class="navbar-brand page-scroll" href="#page-top"><img class="logo" style="width:4em;height:4em;" src="/images/logo.svg"/></a>
             {{-- <a class="navbar-brand page-scroll" href="#page-top">CP</a> --}}
 
         </div>
