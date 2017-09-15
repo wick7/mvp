@@ -46,13 +46,13 @@ class Pages extends Controller{
         return view('pages.terms');
       }
 
+      public function getCookies() {
+
+        return view('pages.cookies');
+      }
+
       public function getPrivacy() {
-        // $first = 'Craig';
-        // $last = 'Wickersham';
-        //
-        // $full = $first . ' ' . $last;
-        // return view('pages.about')->with("fullname", $full);
-        // return view('pages.contact')->withFullname($full);
+
         return view('pages.privacy');
       }
 

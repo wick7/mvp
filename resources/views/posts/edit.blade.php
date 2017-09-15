@@ -10,7 +10,7 @@
         <hr />
       </div>
   </div>
-  {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT'])!!}
+  {!! Form::model($post, ['route' => ['posts.update', $post->slug], 'method' => 'PUT'])!!}
   <div class="row">
     <div class="col-md-8">
 
@@ -33,14 +33,20 @@
         {{ Form::label('title', 'Title of Event:', array('style' => 'text-decoration: underline;'))}}
         {{ Form::text('title', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '100'))}}<br>
 
+        {{ Form::label('slug', 'Slug Tag:')}}
+        {{ Form::text('slug', null, array('class' => 'form-control', 'required' => '', 'minlength' => '5', 'maxlength' => '100'))}}<br>
+
         {{ Form::label('avatar_photo', 'Upload Post Image:', array('style' => 'text-decoration: underline'))}}
         {{Form::file('avatar_photo')}}<br>
 
-        {{ Form::label('time_label', 'Choose Start & End Date/Time:', array('style' => 'text-decoration: underline'))}}<br>
-        {{ Form::label('date_time_start', 'Begins:', array('style' => 'text-decoration: underline'))}}
+        {{ Form::label('time_label', 'Re-Enter Start & End Date/Time:', array('style' => 'text-decoration: underline'))}}<br>
+        <p>Original Start: {{ date('F d, Y', strtotime($post->start)) }} {{ date('g:i a', strtotime($post->start)) }} </p>
+        <p>Original End: {{ date('F d, Y', strtotime($post->end)) }} {{ date('g:i a', strtotime($post->end)) }}</p>
+        {{ Form::label('start', 'Begins:', array('style' => 'text-decoration: underline'))}}
+
         <input type="datetime-local" name="start_time" min="2000-01-02">
 
-        {{ Form::label('date_time_end', 'Ends:', array('style' => 'text-decoration: underline'))}}
+        {{ Form::label('end', 'Ends:', array('style' => 'text-decoration: underline'))}}
         <input type="datetime-local" name="end_time" min="2000-01-02"><br>
 
 
@@ -51,7 +57,7 @@
         {{ Form::label('body', "Post Body:", array('style' => 'margin-top: 1em; text-decoration: underline;'))}}
         {{ Form::textarea('description', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '5000'))}}<br />
 
-        {!! Html::linkRoute('posts.show', 'Cancel', array($post->id), array('class'=> 'btn btn-danger btn-block', 'style' => 'padding: .8em; font-size: 1.2em;' )) !!}
+        {!! Html::linkRoute('posts.show', 'Cancel', array($post->slug), array('class'=> 'btn btn-danger btn-block', 'style' => 'padding: .8em; font-size: 1.2em;' )) !!}
         {{ Form::submit('Save Changes', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 1em'))}}
       {!! Form::close() !!}
     </div>

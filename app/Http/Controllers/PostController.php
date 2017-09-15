@@ -20,6 +20,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
+
         return view('posts.index')->withPosts($posts);
     }
 
@@ -30,9 +31,14 @@ class PostController extends Controller
      */
     public function create()
     {
-        $organizations = Organization::all();
+        // $organizations = Organization::all();
 
-        return view('posts.create', compact('organizations'));
+        // return view('posts.create', compact('organizations'));
+
+        // $posts = Post::all();
+
+        return view('posts.create');
+
     }
 
     /**
@@ -50,6 +56,7 @@ class PostController extends Controller
             'avatar_photo'=>'image|nullable|max:1999',
             'start'=>'required|date|future_start',
             'end' =>'date',
+            'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug'
         ));
 
 
@@ -95,15 +102,16 @@ class PostController extends Controller
         $post->organization_id = $request->org_id;
         // $post->event_date = $request->event_date;
         $post->user_id = Auth::user()->id;
-
+        // slug tag for url Events
+        $post->slug = $request->slug;
 
         $post->save();
 
         //redirect to the page that displays the blog posts
 
-        Session::flash('success', 'The blog post was successfully saved!');
+        Session::flash('success', 'The Event post was successfully saved!');
 
-        return redirect()->route('posts.show', $post->id);
+        return redirect()->route('posts.show', $post->slug);
     }
 
     /**
@@ -112,15 +120,32 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    // public function show($id)
+    // {
+    //
+    //
+    //
+    //     $post = Post::find($id);
+    //
+    //     //Organization this post belongs to.
+    //     $organization = Organization::find($post->organization_id);
+    //     //photos "related" to this post
+    //     $photos = $post->photo;
+    //
+    //
+    //     return view('posts.show', compact('post', 'photos', 'organization'));
+    //
+    // }
+
+    public function show($slug)
     {
 
-        $post = Post::find($id);
-        //Organization this post belongs to.
-        $organization = Organization::find($post->organization_id);
-        //photos "related" to this post
-        $photos = $post->photo;
-        return view('posts.show', compact('post', 'photos', 'organization'));
+
+
+      $post = Post::where('slug', '=', $slug)->first();
+
+      // Return the view and include the slug
+      return view('posts.show')->withPost($post);
 
     }
 
@@ -130,11 +155,14 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
         //find the post in the database and save it as a Variable
 
-        $post = Post::find($id);
+        // $post = Post::find($slug);
+        // return view('posts.edit')->withPost($post);
+
+        $post = Post::where('slug', $slug)->first();
         return view('posts.edit')->withPost($post);
 
     }
@@ -146,18 +174,22 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
       $this->validate($request, array(
           'title' => 'required|max:255',
-          'description' => 'required'
+          'description' => 'required',
+          'slug' => 'required|alpha_dash|min:5|max:255'
+
       ));
 
-      $post = Post::find($id);
+      $post = Post::where('slug', $slug)->first();
 
       $post->title = $request->input('title');
       $post->address_city = $request->input('address_city');
       $post->description = $request->input('description');
+      $post->slug = $request->input('slug');
+
 
       $post->save();
 
@@ -165,7 +197,7 @@ class PostController extends Controller
 
       Session::flash('success', 'The blog post was successfully updated!');
 
-      return redirect()->route('posts.show', $post->id);
+      return redirect()->route('posts.show', $post->slug);
     }
 
     /**
@@ -174,13 +206,15 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        $post = Post::find($id);
+        $post = Post::where('slug', $slug)->first();
 
         $post->delete();
 
-        Session::flash('success', ' The blog post was successfully deleted!');
+        Session::flash('success', ' The Event post was successfully deleted!');
         return redirect()->route('posts.index');
     }
+
+
 }

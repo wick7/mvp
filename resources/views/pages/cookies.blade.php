@@ -8,10 +8,10 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h1 style="text-decoration: underline;">TERMS OF USE</h1>
+        <h1 style="text-decoration: underline;">Cookies Statement</h1>
       </div>
     </div>
-    {{-- <div class="row">
+    <div class="row">
       <div class="col-md-12">
         <p style="text-indent: 50px;">As stated in our <a href="{{ url('privacy') }}">Privacy Policy (“Policy”)</a>, Carrot Path (“Carrot Path,” “we,” “us,” or “our”) strongly believes in transparency and protecting your information. To that end, we’ve created this Cookie Statement to help explain the use of cookies on our website, mobile services and/or any other service provided by us (collectively our “Service”). This Cookie Statement explains how we use cookies (and other locally stored data technologies), how third-party cookies are used on our Service, and suggestions on how you can manage your cookie options.</p>
         <p style="text-indent: 50px;">For the purposes of both this Cookie Statement and our Policy, we refer to all of these technologies collectively  as “cookies.”</p>
@@ -78,7 +78,7 @@
           <a href="http://www.allaboutcookies.org/"><li>http://www.allaboutcookies.org/</li></a>
           <a href="http://www.networkadvertising.org"><li>http://www.networkadvertising.org</li></a>
         </ul>
-      </div> --}}
+      </div>
     </div>
 </section>
 

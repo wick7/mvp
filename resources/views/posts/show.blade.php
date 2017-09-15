@@ -11,9 +11,10 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <a href="{{$post->org_site}}"><h1>{{$post->title}}</h1></a>
+      <a href="{{$post->org_site}}" target="_blank"><h1>{{$post->title}}</h1></a>
       <h4 style="display:inline-block;margin-right: 10px;">Organization:</h4>
-      <a style="display:inline-block;" href="{{$post->org_site}}"><h4>{{$post->org_name}}</h4></a>
+      <a style="display:inline-block;"  href="{{$post->org_site}}" target="_blank"><h4>{{$post->org_name}}</h4></a>
+
       <h5>Date: {{ date('F d, Y', strtotime($post->start)) }}</h5>
       <h5>Time: {{ date('g:i a', strtotime($post->start)) }} - {{ date('g:i a', strtotime($post->end)) }}</h5>
       <h5>Location: {{$post->address_city}}</h5>
@@ -26,7 +27,7 @@
       </div>
   </div>
   <div class="col-md-4">
-    <img class="img-thumbnail" src="https://images.pexels.com/photos/459099/pexels-photo-459099.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+    <img class="img-thumbnail" src="/storage/avatar/{{$post->avatar_photo}}" />
   </div>
   </div>
 </div>
@@ -34,10 +35,10 @@
   @if (Auth::user())
     <div class="row">
       <div class="col-md-12">
-        @foreach ($photos as $photo) --}}
+        {{-- @foreach ($photos as $photo) --}}
           {{-- <p>Title of Photo: {{ $photo->title }}</p> --}}
-          <img style="width: 5em; height: 5em;" src="/storage/photo/{{$photo->post_photo}}">
-      @endforeach
+          {{-- <img style="width: 5em; height: 5em;" src="/storage/photo/{{$photo->post_photo}}">
+      @endforeach --}}
       </div>
   </div>
   <div class="col-md-12">
@@ -52,16 +53,16 @@
       </dl>
       <div class="row">
           <div class="col-sm-3">
-            {!! Html::linkRoute('posts.edit', 'Edit Post', array($post->id), array('class'=> 'btn btn-primary btn-block')) !!}
+            {!! Html::linkRoute('posts.edit', 'Edit Post', array($post->slug), array('class'=> 'btn btn-primary btn-block')) !!}
         </div>
         <div class="col-sm-3">
-            {!! Html::linkRoute('photos', 'Add Photo', array($post->id), array('class'=> 'btn btn-primary btn-block')) !!}
+            {!! Html::linkRoute('photos', 'Add Photo', array($post->slug), array('class'=> 'btn btn-primary btn-block')) !!}
         </div>
         <div class="col-sm-3">
-            {!! Html::linkRoute('posts.create', 'New Post', array($post->id), array('class'=> 'btn btn-primary btn-block')) !!}
+            {!! Html::linkRoute('posts.create', 'New Post', array($post->slug), array('class'=> 'btn btn-primary btn-block')) !!}
         </div>
         <div class="col-sm-3">
-            {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE'])!!}
+            {!! Form::open(['route' => ['posts.destroy', $post->slug], 'method' => 'DELETE'])!!}
             {!! Form::submit('Delete', array('class'=> 'btn btn-danger btn-block')) !!}
             {!! Form::close() !!}
         </div>

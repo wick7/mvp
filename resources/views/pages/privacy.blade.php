@@ -25,7 +25,7 @@
       <div class="col-md-12">
         <p>Your privacy is very important to us at Carrot Path (“Carrot Path,” “we,” “us,” or “our”) so we are committed to protecting it through this Privacy Policy (“Policy”). This Policy explains how we might collect, use, share, and/or protect your information in relation to our website, mobile services, and/or any other service provided by us (collectively our “Service”). It also explains your choices about controlling our potential uses and disclosures of your information.</p>
         <p>
-          We’ve tried to keep things as simple as possible but if you have any questions, please feel free to contact us at carrotpath@gmail.com.
+          We’ve tried to keep things as simple as possible but if you have any questions, please feel free to contact us at <a href="mailto:carrotpath@gmail.com">carrotpath@gmail.com</a>.
         </p>
       </div>
     </div>
@@ -36,7 +36,7 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <p>This Policy applies to all visitors and users who visit our website or otherwise use our Service in any way. We encourage you to read this Policy carefully when using our Service. By using our Service, you understand and agree to be bound by this Policy as well as our Terms of Use [text is link to Terms]. Additionally, you understand and agree that we are providing a platform for you to post content (“User Content”), such as photographs, comments, and other materials, to the Service and to share User Content publicly if you so chose. This means that other Carrot Path users may search for, see, use, and/or share any of your User Content that you make publicly available through the Service.</p>
+        <p>This Policy applies to all visitors and users who visit our website or otherwise use our Service in any way. We encourage you to read this Policy carefully when using our Service. By using our Service, you understand and agree to be bound by this Policy as well as our Terms of Use [LINK TO TERMS]. Additionally, you understand and agree that we are providing a platform for you to post content (“User Content”), such as photographs, comments, and other materials, to the Service and to share User Content publicly if you so chose. This means that other Carrot Path users may search for, see, use, and/or share any of your User Content that you make publicly available through the Service.</p>
       </div>
     </div>
     <div class="row">
@@ -77,7 +77,7 @@
           <li>Contacts information: If you permit us to access the address book on your devices through the permission system used by your devices, we may access and store contact information from your address book to facilitate social interactions through our Service and for other purposes described in this Policy. This location collection may occur both when our Service is running in the foreground or background of your devices.</li>
           <li>Analytics information: We may use third-party analytics tools to help us measure traffic and usage trends for our Service. These tools collect information given by you to us, including the web pages you visit, add-ons, and other information that assists us in improving our Service. Such information would be collected and used in a way so that it cannot reasonably be used to identify any particular individual user.<br><br>
           For the purposes of both this Policy and our Cookie Statement, we refer to all of these technologies collectively as “cookies.”</li>
-          <li>Cookies and similar technologies: When you visit our Service, we may use cookies and similar technologies like pixels, web beacons, and local storage to collect information about how you use Carrot Path. To learn more about these technologies, please see our Cookie Statement [link to cookie statement].</li>
+          <li>Cookies and similar technologies: When you visit our Service, we may use cookies and similar technologies like pixels, web beacons, and local storage to collect information about how you use Carrot Path. To learn more about these technologies, please see our <a href="{{ url('cookies') }}">Cookie Statement</a>.</li>
           <li>Log file information: Log file information is automatically reported by your browser each time you make a request to access (i.e. visit) a web page or app. It can also be provided when the content of the webpage or app is downloaded to your browser or device. When you use our Service, our servers automatically record certain log file information, including your web request, IP address, browser type, referring/exit pages and URLs, number of clicks and how you interact with links on our Service, domain names, landing pages, pages viewed, and other such information. This information allows for more accurate reporting and improvement of our Service by helping us track which emails are opened and which links recipients click.</li>
           <li>Mobile device identifiers: When you use a mobile device like a tablet or phone to access our Service, we may access, collect, monitor, store on your device, and/or remotely store one or more "device identifiers." Device identifiers are small data files or similar data structures stored on or associated with your mobile device, which uniquely identify your mobile device. A device identifier may be data stored in connection with the device hardware, data stored in connection with the device's operating system or other software, or data sent to the device by Carrot Path. A device identifier may deliver information to us or to a third-party partner about how you browse and use our Service and may help us or others provide reports or targeted content and ads on our Service. Some features of our Service may not function properly of as well if use or availability of device identifiers is impaired or disabled.</li>
           <li>Metadata: Metadata is essentially technical data about User Content. For example, metadata can describe when a picture of an event uploaded by a Carrot Path user was collected and how that picture is formatted.</li>
@@ -181,7 +181,7 @@
     <div class="row">
       <div class="col-md-12">
         <ul class="legal_lists">
-          <li>If you wish to terminate your account, please email us at [LINK]. Please note however, that following termination of your account, Carrot Path, its Affiliates, or its Service Providers may retain information (including your profile information) and User Content as required by law, or for legitimate business purposes to the extent permitted by law (i.e. for audit purposes).</li>
+          <li>If you wish to terminate your account, please email us at <a href="mailto:carrotpath@gmail.com">carrotpath@gmail.com</a>. Please note however, that following termination of your account, Carrot Path, its Affiliates, or its Service Providers may retain information (including your profile information) and User Content as required by law, or for legitimate business purposes to the extent permitted by law (i.e. for audit purposes).</li>
         </ul>
       </div>
     </div>
@@ -229,7 +229,7 @@
     <div class="row">
       <div class="col-md-12">
         <ul class="legal_lists">
-          <li>Pursuant to Section 1798.83 of the California Civil Code, residents of California can obtain certain information about the types of personal information that companies with whom they have an established business relationship have shared with third parties for direct marketing purposes during the preceding calendar year. In particular, the law provides that companies must inform consumers about the categories of personal information that have been shared with third parties, the names and addresses of those third parties, and examples of the types of services or products marketed by those third parties. To request a copy of the information disclosure provided by us pursuant to Section 1798.83 of the California Civil Code, please contact us via this email address [INSERT LINK]. Please allow us 30 days for a response.</li>
+          <li>Pursuant to Section 1798.83 of the California Civil Code, residents of California can obtain certain information about the types of personal information that companies with whom they have an established business relationship have shared with third parties for direct marketing purposes during the preceding calendar year. In particular, the law provides that companies must inform consumers about the categories of personal information that have been shared with third parties, the names and addresses of those third parties, and examples of the types of services or products marketed by those third parties. To request a copy of the information disclosure provided by us pursuant to Section 1798.83 of the California Civil Code, please contact us via this email address <a href="mailto:carrotpath@gmail.com">carrotpath@gmail.com</a>. Please allow us 30 days for a response.</li>
         </ul>
       </div>
     </div>
@@ -241,7 +241,7 @@
     <div class="row">
       <div class="col-md-12">
         <ul class="legal_lists">
-          <li>We may obtain information about your general Internet usage by using cookies. Cookies are small pieces of text that can be placed on your computer or mobile device that uniquely identify your browser or device. Please see our Cookie Statement [LINK] for more information about your choices regarding our use of cookies.</li>
+          <li>We may obtain information about your general Internet usage by using cookies. Cookies are small pieces of text that can be placed on your computer or mobile device that uniquely identify your browser or device. Please see our <a href="{{ url('cookies') }}">Cookie Statement</a> for more information about your choices regarding our use of cookies.</li>
         </ul>
       </div>
     </div>
@@ -253,7 +253,7 @@
     <div class="row">
       <div class="col-md-1 col-xs-1"></div>
       <div class="col-md-10 col-xs-10">
-        <p style="text-indent: 20;">We do not intentionally gather any information from individuals who are under the age of 13 or intentionally allow such persons to register for our Service. Carrot Path is not directed towards children under the age of 13. In the event that we learn that we have collected personally identifiable information from a child under age 13, we will delete that information as quickly as possible. If you believe that we might have obtained personally identifiable information from a child under age 13, please contact us at [LINK]. </p>
+        <p style="text-indent: 20;">We do not intentionally gather any information from individuals who are under the age of 13 or intentionally allow such persons to register for our Service. Carrot Path is not directed towards children under the age of 13. In the event that we learn that we have collected personally identifiable information from a child under age 13, we will delete that information as quickly as possible. If you believe that we might have obtained personally identifiable information from a child under age 13, please contact us at <a href="mailto:carrotpath@gmail.com">carrotpath@gmail.com</a>. </p>
       </div>
     </div>
     <div class="row">
@@ -286,7 +286,7 @@
     <div class="row">
       <div class="col-md-1 col-xs-1"></div>
       <div class="col-md-10 col-xs-10">
-        <p style="text-indent: 20;">We may allow others to provide audience measurement and analytics services for us, to serve advertisements on our behalf across the Internet, and to track and report on the performance of those advertisements. These entities may use cookies when you visit our site and use our Services, as well as when you visit other websites and services. For more information about these technologies, please see our Cookie Statement [LINK].</p>
+        <p style="text-indent: 20;">We may allow others to provide audience measurement and analytics services for us, to serve advertisements on our behalf across the Internet, and to track and report on the performance of those advertisements. These entities may use cookies when you visit our site and use our Services, as well as when you visit other websites and services. For more information about these technologies, please see our <a href="{{ url('cookies') }}">Cookie Statement</a>.</p>
       </div>
     </div>
     <div class="row">

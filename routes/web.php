@@ -14,10 +14,18 @@
 Route::get('/', 'Pages@getHome');
 Route::get('terms', 'Pages@getTerms');
 Route::get('privacy', 'Pages@getPrivacy');
+Route::get('cookies', 'Pages@getCookies');
 Route::get('attribution', 'Pages@getAttribution');
+Route::resource('posts', 'PostController');
+
+Route::get('posts/{slug}', ['as' => 'posts.show', 'uses' => 'PostController@show'])
+      ->where('slug', '[\w\d\-\_]+');
+
 
 //post route
-Route::resource('posts', 'PostController');
+
+
+
 
 //photos route
 Route::get('photos/{id}','Photocontroller@create')->name('photos');
