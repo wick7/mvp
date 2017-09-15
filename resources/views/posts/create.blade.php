@@ -35,11 +35,15 @@
         {{ Form::label('title', 'Title of Event:')}}
         {{ Form::text('title', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '100'))}}<br>
 
+        {{ Form::label('slug', 'Slug Tag:')}}
+        {{ Form::text('slug', null, array('class' => 'form-control', 'required' => '', 'minlength' => '5', 'maxlength' => '100'))}}<br>
+
 
         {{ Form::label('avatar_photo', 'Upload Post Image:',array('style' => 'text-decoration: underline'))}}
         {{Form::file('avatar_photo')}}<br>
         {{ Form::label('Choose Start & End Date/Time:')}}<br>
         {{ Form::label('start', 'Begins:')}}
+
         <input type="datetime-local" name="start" min="2000-01-02">
         {{ Form::label('end', 'Ends:')}}
         <input type="datetime-local" name="end" min="2000-01-02"><br>
@@ -53,7 +57,7 @@
         <a href="{{ url('posts') }}"><div style='margin-top: 1em' class="btn btn-danger btn-lg btn-block">CANCEL</div></a>
       {!! Form::close() !!}
 
-       <!-- <a href="{{route('org')}}" class="btn btn-success">Create New Organization</a> -->
+       {{-- <a href="{{route('org')}}" class="btn btn-success">Create New Organization</a> --}}
     </div>
     <div class="col-md-2 col-lg-2 col-xs-2"></div>
   </div>

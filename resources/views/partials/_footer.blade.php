@@ -19,12 +19,14 @@
           </li>
           <li><a href="{{ url('terms') }}">Terms of Use</a>
           </li>
+          <li><a href="{{ url('cookies') }}">Cookie Statement</a>
+          </li>
           <li><a href="{{ url('attribution') }}">Attribution</a>
           </li>
         </ul>
         <div class="row">
-          <div class="col-lg-6 pull-left">
-            <span class="copyright">Copyright &copy; Carrot Path 2017</span>
+          <div class="col-lg-8 pull-left">
+            <span class="copyright">&copy; 2017 Carrot Path, Inc. All rights reserved</span>
           </div>
         </div>
       </div>
