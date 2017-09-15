@@ -30,7 +30,7 @@
         @foreach ($posts as $post)
         <div class="col-md-6 col-lg-4">
           <div class="card">
-            <img alt="Card image cap" class="card-img-top img-fluid img-thumbnail" style="height:20em; width: 20em;" src="https://images.pexels.com/photos/459099/pexels-photo-459099.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+            <img alt="Card image cap" class="card-img-top img-fluid img-thumbnail" style="height:20em; width: 20em;" src="/storage/avatar/{{$post->avatar_photo}}" />
             <div class="card-block" style="margin-bottom: 1em;">
               <h4 class="card-title" style="word-wrap: break-word;">{{$post->title}}</h4>
               <h5>Date/Time:  August 21, 2017 - 10am - 12pm</h5>

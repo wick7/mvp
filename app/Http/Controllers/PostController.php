@@ -49,7 +49,7 @@ class PostController extends Controller
             'description' => 'required',
             'avatar_photo'=>'image|nullable|max:1999',
             'start'=>'required|date|future_start',
-            'end' =>'date',
+            'end' =>'date|required',
         ));
 
 

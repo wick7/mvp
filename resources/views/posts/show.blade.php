@@ -25,7 +25,7 @@
       </div>
   </div>
   <div class="col-md-4">
-    <img class="img-thumbnail" src="https://images.pexels.com/photos/459099/pexels-photo-459099.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+    <img class="img-thumbnail" src="/storage/avatar/{{$post->avatar_photo}}" />
   </div>
   </div>
 </div>

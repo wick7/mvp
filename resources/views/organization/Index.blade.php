@@ -8,7 +8,7 @@
               <a href="{{route('posts.show', $post->id)}}" class="btn btn-primary">View</a>
               @if (Auth::user())
 
-                <a href="{{route('organizations_edit.edit', $post->id)}}" class="btn btn-success">Edit</a>
+                <a href="{{route('organization.Edit', $post->id)}}" class="btn btn-success">Edit</a>
 
               @endif
 
