@@ -34,8 +34,8 @@
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 
-        <script src="js/agency.js"></script>
-        <script src="js/gulpfile.js"></script>
+        <script src="js/agency.min.js"></script>
+        <script src="js/gulpfile.min.js"></script>
 
         <!-- Styles -->
 
