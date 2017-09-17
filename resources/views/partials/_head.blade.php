@@ -26,7 +26,7 @@
         <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
 
         <!-- DateTimePicker -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/parsely.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/parsely.min.css')}}">
         {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/agency.css')}}"> --}}
         <link rel="stylesheet" type="text/css" href="{{ asset('css/agency.min.css')}}">
 
