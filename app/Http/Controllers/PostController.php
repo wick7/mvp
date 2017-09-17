@@ -12,6 +12,11 @@ use Storage;
 
 class PostController extends Controller
 {
+     public function __construct()
+    {
+        //Sets the middleware, uses except to spefiy whwere to ignore.
+    $this->middleware('auth',['except' => ['index','show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -31,6 +36,7 @@ class PostController extends Controller
      */
     public function create()
     {
+        
         // $organizations = Organization::all();
 
         // return view('posts.create', compact('organizations'));
@@ -49,6 +55,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $this->middleware('auth');
 
         $this->validate($request, array(
             'title' => 'required|max:255',
@@ -139,6 +146,7 @@ class PostController extends Controller
 
     public function show($slug)
     {
+        $this->middleware('auth');
 
 
 
@@ -157,6 +165,8 @@ class PostController extends Controller
      */
     public function edit($slug)
     {
+        $this->middleware('auth');
+
         //find the post in the database and save it as a Variable
 
         // $post = Post::find($slug);
@@ -176,6 +186,8 @@ class PostController extends Controller
      */
     public function update(Request $request, $slug)
     {
+        $this->middleware('auth');
+
       $this->validate($request, array(
           'title' => 'required|max:255',
           'description' => 'required',
@@ -208,6 +220,8 @@ class PostController extends Controller
      */
     public function destroy($slug)
     {
+        $this->middleware('auth');
+
         $post = Post::where('slug', $slug)->first();
 
         $post->delete();

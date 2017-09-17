@@ -1,9 +1,7 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
 class AddSlugToPosts extends Migration
 {
     /**
@@ -17,7 +15,6 @@ class AddSlugToPosts extends Migration
           $table->string('slug')->unique()->after('description');
         });
     }
-
     /**
      * Reverse the migrations.
      *

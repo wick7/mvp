@@ -22,6 +22,7 @@ class CreatePostsTable extends Migration
             $table->dateTime('start');
             $table->dateTime('end');
             $table->string('title');
+            #$table->string('slug')->unique()->after('description');
             $table->integer('user_id');
             $table->integer('organization_id')->nullable();
             $table->integer('photo_id')->nullable();
