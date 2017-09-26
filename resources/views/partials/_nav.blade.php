@@ -68,4 +68,4 @@
 <script src="js/contact_me.js"></script>
 
 <!-- Theme JavaScript -->
-<script src="js/agency.js"></script>
+<script src="js/agency.min.js"></script>

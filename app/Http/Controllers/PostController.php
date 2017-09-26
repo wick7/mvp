@@ -36,7 +36,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        
+
         // $organizations = Organization::all();
 
         // return view('posts.create', compact('organizations'));
@@ -90,7 +90,7 @@ class PostController extends Controller
 
             //places Default file in storage
         } else{
-            $fileNametoStore = 'Default.png';
+            $fileNametoStore = 'carrotpath_1505454707.png';
         }
 
         //store in database - no if/else statements needed for L 5.4
