@@ -17,12 +17,44 @@
         <div class="intro-text">
             <div class="intro-heading">CARROT PATH</div>
             <div class="intro-lead-in">A Platform Creating A Simplified Volunteering Experience</div>
-            <a href="#about" class="page-scroll btn btn-xl" style="border-radius: 25px; margin-top:3em;">Tell Me More</a>
-            <a href="{{ url('posts') }}" class="page-scroll btn btn-xl" style="border-radius: 25px; margin-top:3em;margin-left: .5em;">Show Me More</a>
+            <a href="#about" class="page-scroll btn btn-xl" style="border-radius: 25px; margin-top:3em;">About</a>
+            <a href="#recent" class="page-scroll btn btn-xl" style="border-radius: 25px; margin-top:3em;margin-left: .5em;">Recent</a>
         </div>
     </div>
 </header>
 
+
+
+<!-- About Section -->
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading" style="margin-bottom: 2em;">About</h2>
+                {{-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> --}}
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <i style="font-size: 150px;"class="fa fa-users fa-5x"></i>
+                <h4 class="service-heading">In a given year, 25% of americans volunteer, only 33% do so next year</h4>
+                <p class="text-muted">We help make finding volunteering events easier</p>
+            </div>
+
+            <div class="col-md-4">
+                <i style="font-size: 150px;"class="fa fa-clock-o fa-5x"></i>
+                <h4 class="service-heading">85% of non profit organizations need volunteers to operate effectively</h4>
+                <p class="text-muted">We find and post upcoming events in your community</p>
+            </div>
+
+            <div class="col-md-4">
+                <i style="font-size: 150px;"class="fa fa-level-up fa-5x"></i>
+                <h4 class="service-heading">Our goal is to create a sustainable volunteering experience</h4>
+                <p class="text-muted">We work directly with Nonprofits to ensure the quality of our info</p>
+            </div>
+
+    </div>
+</section>
 
 <!-- Recent Section -->
 
@@ -60,36 +92,7 @@
     </div>
 </section>
 
-<!-- About Section -->
-<section id="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading" style="margin-bottom: 2em;">About</h2>
-                {{-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> --}}
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <i style="font-size: 150px;"class="fa fa-users fa-5x"></i>
-                <h4 class="service-heading">In a given year, 25% of americans volunteer, only 33% do so next year</h4>
-                <p class="text-muted">We help make finding volunteering events easier</p>
-            </div>
 
-            <div class="col-md-4">
-                <i style="font-size: 150px;"class="fa fa-clock-o fa-5x"></i>
-                <h4 class="service-heading">85% of non profit organizations need volunteers to operate effectively</h4>
-                <p class="text-muted">We find and post upcoming events in your community</p>
-            </div>
-
-            <div class="col-md-4">
-                <i style="font-size: 150px;"class="fa fa-level-up fa-5x"></i>
-                <h4 class="service-heading">Our goal is to create a sustainable volunteering experience</h4>
-                <p class="text-muted">We work directly with Nonprofits to ensure the quality of our info</p>
-            </div>
-
-    </div>
-</section>
 
 @include('partials._footer')
 

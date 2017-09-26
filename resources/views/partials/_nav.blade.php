@@ -43,12 +43,7 @@
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
-                <li>
-                    <a class="page-scroll collapse_nav" href="#recent" style="color: white;">Recently Added</a>
-                </li>
-                <li>
-                    <a class="page-scroll collapse_nav" href="#about" style="color: white;">About</a>
-                </li>
+               
                 <li>
                     <a class="page-scroll collapse_nav" href="{{ url('posts') }}" style="color: white;">Listing</a>
                 </li>
