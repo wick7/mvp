@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use Session;
 use Auth;
-
+use Carbon\Carbon;
 class Pages extends Controller{
 
       public function getHome() {
@@ -26,7 +26,9 @@ class Pages extends Controller{
 
 
 
-        $posts = Post::orderBy('created_at','desc')->paginate(3);
+        $posts = Post::orderBy('start','asc') 
+        ->where('start', '>=', Carbon::now())
+        ->paginate(3);
 
         return view('pages.home', compact('posts', 'user_id'));
 
