@@ -33,8 +33,7 @@
         {{ Form::label('title', 'Title of Event:', array('style' => 'text-decoration: underline;'))}}
         {{ Form::text('title', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '100'))}}<br>
 
-        {{ Form::label('slug', 'Slug Tag:')}}
-        {{ Form::text('slug', null, array('class' => 'form-control', 'required' => '', 'minlength' => '5', 'maxlength' => '100'))}}<br>
+        
 
         {{ Form::label('avatar_photo', 'Upload Post Image:', array('style' => 'text-decoration: underline'))}}
         {{Form::file('avatar_photo')}}<br>
@@ -44,10 +43,10 @@
         <p>Original End: {{ date('F d, Y', strtotime($post->end)) }} {{ date('g:i a', strtotime($post->end)) }}</p>
         {{ Form::label('start', 'Begins:', array('style' => 'text-decoration: underline'))}}
 
-        <input type="datetime-local" name="start_time" min="2000-01-02">
+        <input type="datetime-local" name="start" min="2000-01-02">
 
         {{ Form::label('end', 'Ends:', array('style' => 'text-decoration: underline'))}}
-        <input type="datetime-local" name="end_time" min="2000-01-02"><br>
+        <input type="datetime-local" name="end" min="2000-01-02"><br>
 
 
 

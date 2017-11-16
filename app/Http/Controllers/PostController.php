@@ -191,20 +191,57 @@ class PostController extends Controller
         $this->middleware('auth');
 
       $this->validate($request, array(
-          'title' => 'required|max:255',
-          'description' => 'required',
-          'slug' => 'required|alpha_dash|min:5|max:255'
+            'title' => 'required|max:255',
+            'description' => 'required',
+            'avatar_photo'=>'image|nullable|max:1999',
+            'start'=>'required|date|future_start',
+            'end' =>'date'
+        ));
+ if($request->hasFile('avatar_photo')){
+            //Get Filename with the Extention
+            $filenameWithExt = $request->file('avatar_photo')->getClientOriginalName();
+            // Get Just Filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get Just ext
+            $extention = $request->file('avatar_photo')->getClientOriginalExtension();
+            //file to store
+            $fileNametoStore = $filename.'_'.time().'.'.$extention;
+            //uploade image
+            // $path = $request->file('post_photo')->storeAs('', $fileNametoStore);
+            $path =Storage::putFileAs('public/avatar', $request->file('avatar_photo'), $fileNametoStore);
+            // dd($path);
 
-      ));
+            //places Default file in storage
+        } else{
+            $fileNametoStore = 'carrotpath_1505454707.png';
+        }
+
 
       $post = Post::where('slug', $slug)->first();
 
-      $post->title = $request->input('title');
-      $post->address_city = $request->input('address_city');
-      $post->description = $request->input('description');
-      $post->slug = $request->input('slug');
+        $post->start = $request->start;
+        //date and time end
+        $post->end = $request->end;
+        $post->avatar_photo = $fileNametoStore;
+        $post->org_name = $request->org_name;
+        $post->org_site = $request->org_site;
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->address_city = $request->address_city;
+        // address_street used to store date
+        $post->organization_id = $request->org_id;
+        // $post->event_date = $request->event_date;
+        $post->user_id = Auth::user()->id;
+        // slug tag for url Events
+        $post->slug = $slug;
 
+        $post->save();
 
+        //redirect to the page that displays the blog posts
+
+        Session::flash('success', 'The Event post was successfully saved!');
+
+        return redirect()->route('posts.show', $post->slug);
       $post->save();
 
       //redirect to the page that displays the blog posts
